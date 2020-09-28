@@ -1,0 +1,24 @@
+{
+  "name": "@spectrum/sp-textfield",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/textfield.component.js",
+  "module": "dist/textfield.component.js",
+  "dependencies": {
+    "@spectrum/sp-base": "git+https://github.com/emexal-company/sp-base.git",
+    "@spectrum/sp-config": "git+https://github.com/emexal-company/sp-config.git",
+    "lit-element": "^2.4.0",
+    "tslib": "^2.0.1"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "engines": {
+    "node": ">=8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Omar BELKHODJA",
+  "license": "Apache-2.0"
+}
