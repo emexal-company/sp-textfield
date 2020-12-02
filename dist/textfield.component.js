@@ -1,3 +1,16 @@
+/**
+    @license
+    Copyright 2020 EMEXAL All Rights Reserved.
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+        http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
 import { __decorate, __metadata } from "tslib";
 import { customElement, property } from 'lit-element';
 import { Base } from '@spectrum/sp-base';
@@ -17,6 +30,19 @@ let Textfield = class Textfield extends Base {
         this.disabled = false;
         this.labelposition = 'top';
         this.width = null;
+        this.firstOfGroup = true;
+        this.lastOfGroup = true;
+    }
+    connectedCallback() {
+        super.connectedCallback();
+        if (this.parentElement.nodeName === 'SP-GROUP') {
+            console.log(Array.from(this.parentElement.children).findIndex((child) => child === this));
+            const myIndex = Array.from(this.parentElement.children).findIndex((child) => child === this);
+            const lastIndex = Array.from(this.parentElement.children).length - 1;
+            const firstIndex = 0;
+            this.firstOfGroup = (myIndex === firstIndex);
+            this.lastOfGroup = (myIndex === lastIndex);
+        }
     }
     handleChange(e) {
         this.value = e.target.value;
@@ -76,6 +102,14 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", Object)
 ], Textfield.prototype, "width", void 0);
+__decorate([
+    property({ type: Boolean }),
+    __metadata("design:type", Object)
+], Textfield.prototype, "firstOfGroup", void 0);
+__decorate([
+    property({ type: Boolean }),
+    __metadata("design:type", Object)
+], Textfield.prototype, "lastOfGroup", void 0);
 Textfield = __decorate([
     customElement('sp-textfield')
 ], Textfield);

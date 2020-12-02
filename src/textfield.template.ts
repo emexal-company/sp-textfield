@@ -31,14 +31,16 @@ export default function template(this: Textfield) {
     return html`
         ${this.label !== '' ? html`<label class="spectrum-FieldLabel ${classMap(labelClasses)}">${this.label}</label>` : ''}
         <input
-        style="width: ${this.width};"
-        type="${this.type}"
-        placeholder="${this.placeholder}"
-        .value="${this.value}"
-        name="${this.name}"
-        @input="${this.handleChange}"
-        class="spectrum-Textfield ${classMap(inputClasses)}"
-        ?disabled="${this.disabled}"
+            ?firstofgroup="${this.firstOfGroup}"
+            ?lastofgroup="${this.lastOfGroup}"
+            style="width: ${this.width};"
+            type="${this.type}"
+            placeholder="${this.placeholder}"
+            .value="${this.value}"
+            name="${this.name}"
+            @input="${this.handleChange}"
+            class="spectrum-Textfield ${classMap(inputClasses)}"
+            ?disabled="${this.disabled}"
         >
         `;
 }

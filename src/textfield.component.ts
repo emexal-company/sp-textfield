@@ -33,6 +33,24 @@ export class Textfield extends Base {
   @property({ type: String }) labelposition = 'top';
   @property({ type: String }) width = null;
 
+  @property({ type: Boolean }) firstOfGroup = true;
+  @property({ type: Boolean }) lastOfGroup = true;
+
+  public connectedCallback() {
+    super.connectedCallback();
+
+    if (this.parentElement.nodeName === 'SP-GROUP') {
+      console.log(Array.from(this.parentElement.children).findIndex((child) => child === this));
+
+      const myIndex = Array.from(this.parentElement.children).findIndex((child) => child === this);
+      const lastIndex = Array.from(this.parentElement.children).length - 1;
+      const firstIndex = 0;
+
+      this.firstOfGroup = (myIndex === firstIndex);
+      this.lastOfGroup = (myIndex === lastIndex);
+    }
+  }
+
   protected handleChange(e: any) {
     this.value = e.target.value;
 
