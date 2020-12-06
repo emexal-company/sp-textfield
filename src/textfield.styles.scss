@@ -254,9 +254,5 @@ input[lastofgroup] {
 
 :host {
     position: relative;
-    z-index: -1;
 }
 
-:host(:hover), :host(:active), :host(:focus)  {
-    z-index: auto;
-}
