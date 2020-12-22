@@ -32,6 +32,7 @@ export class Textfield extends Base {
   @property({ type: Boolean }) disabled = false;
   @property({ type: String }) labelposition = 'top';
   @property({ type: String }) width = null;
+  @property({ type: String }) position = 'alone';
 
   protected handleChange(e: any) {
     this.value = e.target.value;

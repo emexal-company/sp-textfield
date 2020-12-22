@@ -30,6 +30,7 @@ let Textfield = class Textfield extends Base {
         this.disabled = false;
         this.labelposition = 'top';
         this.width = null;
+        this.position = 'alone';
     }
     handleChange(e) {
         this.value = e.target.value;
@@ -89,6 +90,10 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", Object)
 ], Textfield.prototype, "width", void 0);
+__decorate([
+    property({ type: String }),
+    __metadata("design:type", Object)
+], Textfield.prototype, "position", void 0);
 Textfield = __decorate([
     customElement('sp-textfield')
 ], Textfield);

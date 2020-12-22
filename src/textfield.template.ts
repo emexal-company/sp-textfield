@@ -36,6 +36,7 @@ export default function template(this: Textfield) {
             placeholder="${this.placeholder}"
             .value="${this.value}"
             name="${this.name}"
+            position="${this.position}"
             @input="${this.handleChange}"
             class="spectrum-Textfield ${classMap(inputClasses)}"
             ?disabled="${this.disabled}"
