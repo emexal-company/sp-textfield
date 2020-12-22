@@ -30,18 +30,6 @@ let Textfield = class Textfield extends Base {
         this.disabled = false;
         this.labelposition = 'top';
         this.width = null;
-        this.firstOfGroup = true;
-        this.lastOfGroup = true;
-    }
-    connectedCallback() {
-        super.connectedCallback();
-        if (this.parentElement.nodeName === 'SP-GROUP') {
-            const myIndex = Array.from(this.parentElement.children).findIndex((child) => child === this);
-            const lastIndex = Array.from(this.parentElement.children).length - 1;
-            const firstIndex = 0;
-            this.firstOfGroup = (myIndex === firstIndex);
-            this.lastOfGroup = (myIndex === lastIndex);
-        }
     }
     handleChange(e) {
         this.value = e.target.value;
@@ -101,14 +89,6 @@ __decorate([
     property({ type: String }),
     __metadata("design:type", Object)
 ], Textfield.prototype, "width", void 0);
-__decorate([
-    property({ type: Boolean }),
-    __metadata("design:type", Object)
-], Textfield.prototype, "firstOfGroup", void 0);
-__decorate([
-    property({ type: Boolean }),
-    __metadata("design:type", Object)
-], Textfield.prototype, "lastOfGroup", void 0);
 Textfield = __decorate([
     customElement('sp-textfield')
 ], Textfield);

@@ -238,16 +238,16 @@
     box-shadow: 0 1px 0 var(--spectrum-textfield-border-color-error, var(--spectrum-global-color-red-500));
 }
 
-input:not([firstofgroup]) {
+:host-context(sp-group):host(:not(:first-child)) input {
     margin-left: calc(-1 * var(--spectrum-textfield-border-size, var(--spectrum-alias-border-size-thin)));
 }
 
-input[firstofgroup] {
+:host-context(sp-group):host(:first-child) input {
     border-bottom-left-radius: var(--spectrum-textfield-border-radius, var(--spectrum-alias-border-radius-regular));
     border-top-left-radius: var(--spectrum-textfield-border-radius, var(--spectrum-alias-border-radius-regular));    
 }
 
-input[lastofgroup] {
+:host-context(sp-group):host(:last-child) input {
     border-bottom-right-radius: var(--spectrum-textfield-border-radius, var(--spectrum-alias-border-radius-regular));
     border-top-right-radius: var(--spectrum-textfield-border-radius, var(--spectrum-alias-border-radius-regular));
 }

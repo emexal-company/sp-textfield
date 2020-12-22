@@ -31,8 +31,6 @@ export default function template(this: Textfield) {
     return html`
         ${this.label !== '' ? html`<label class="spectrum-FieldLabel ${classMap(labelClasses)}">${this.label}</label>` : ''}
         <input
-            ?firstofgroup="${this.firstOfGroup}"
-            ?lastofgroup="${this.lastOfGroup}"
             style="width: ${this.width};"
             type="${this.type}"
             placeholder="${this.placeholder}"

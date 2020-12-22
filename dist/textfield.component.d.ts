@@ -25,9 +25,6 @@ export declare class Textfield extends Base {
     disabled: boolean;
     labelposition: string;
     width: any;
-    firstOfGroup: boolean;
-    lastOfGroup: boolean;
-    connectedCallback(): void;
     protected handleChange(e: any): void;
     protected render(): import("lit-element").TemplateResult;
 }
